@@ -1,7 +1,7 @@
 var Game = function() {
   this.name = 'etna'
 }
-
+/* global THREE */
 Game.prototype.start = function() {
   // Создаем сцену
   var scene = new THREE.Scene();
@@ -27,7 +27,7 @@ Game.prototype.start = function() {
 
   function render() {
 
-    cube.rotation.y += 0.05
+    cube.rotation.y += 0.01
     cube.rotation.z += 0.01
 
     requestAnimationFrame(render);

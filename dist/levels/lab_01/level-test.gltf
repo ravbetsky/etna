@@ -1,0 +1,668 @@
+{
+  "accessors": {
+    "accessor_index_0": {
+      "bufferView": "bufferView_1",
+      "byteOffset": 0,
+      "byteStride": 0,
+      "componentType": 5123,
+      "count": 12,
+      "type": "SCALAR",
+      "min": [
+        0
+      ],
+      "max": [
+        7
+      ]
+    },
+    "accessor_index_1": {
+      "bufferView": "bufferView_1",
+      "byteOffset": 24,
+      "byteStride": 0,
+      "componentType": 5123,
+      "count": 60,
+      "type": "SCALAR",
+      "min": [
+        8
+      ],
+      "max": [
+        39
+      ]
+    },
+    "accessor_index_2": {
+      "bufferView": "bufferView_1",
+      "byteOffset": 144,
+      "byteStride": 0,
+      "componentType": 5123,
+      "count": 144,
+      "type": "SCALAR",
+      "min": [
+        40
+      ],
+      "max": [
+        111
+      ]
+    },
+    "accessor_index_3": {
+      "bufferView": "bufferView_1",
+      "byteOffset": 432,
+      "byteStride": 0,
+      "componentType": 5123,
+      "count": 114,
+      "type": "SCALAR",
+      "min": [
+        112
+      ],
+      "max": [
+        145
+      ]
+    },
+    "accessor_index_4": {
+      "bufferView": "bufferView_1",
+      "byteOffset": 660,
+      "byteStride": 0,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR",
+      "min": [
+        8
+      ],
+      "max": [
+        147
+      ]
+    },
+    "accessor_index_5": {
+      "bufferView": "bufferView_1",
+      "byteOffset": 732,
+      "byteStride": 0,
+      "componentType": 5123,
+      "count": 48,
+      "type": "SCALAR",
+      "min": [
+        84
+      ],
+      "max": [
+        167
+      ]
+    },
+    "accessor_position": {
+      "bufferView": "bufferView_0",
+      "byteOffset": 0,
+      "byteStride": 0,
+      "componentType": 5126,
+      "count": 166,
+      "min": [
+        -1.6589679718017578,
+        -1.0994559526443481,
+        -5.17783784866333
+      ],
+      "max": [
+        1.5970890522003174,
+        0.9994480013847351,
+        5.548501968383789
+      ],
+      "type": "VEC3"
+    },
+    "accessor_normal": {
+      "bufferView": "bufferView_0",
+      "byteOffset": 1992,
+      "byteStride": 0,
+      "componentType": 5126,
+      "count": 166,
+      "type": "VEC3",
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "max": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "asset": {
+    "generator": "OBJ2GLTF",
+    "premultipliedAlpha": true,
+    "profile": {
+      "api": "WebGL",
+      "version": "1.0"
+    },
+    "version": "1.0"
+  },
+  "buffers": {
+    "buffer_0": {
+      "type": "arraybuffer",
+      "byteLength": 4812,
+      "uri": "buffer_0.bin"
+    }
+  },
+  "bufferViews": {
+    "bufferView_0": {
+      "buffer": "buffer_0",
+      "byteLength": 3984,
+      "byteOffset": 0,
+      "target": 34962
+    },
+    "bufferView_1": {
+      "buffer": "buffer_0",
+      "byteLength": 828,
+      "byteOffset": 3984,
+      "target": 34963
+    }
+  },
+  "images": {
+    "floor": {
+      "uri": "floor.jpeg"
+    },
+    "floor2": {
+      "uri": "floor2.jpeg"
+    },
+    "pool": {
+      "uri": "pool.jpeg"
+    },
+    "top": {
+      "uri": "top.jpeg"
+    },
+    "wall1": {
+      "uri": "wall1.jpeg"
+    }
+  },
+  "materials": {
+    "material_floor_1": {
+      "name": "floor_1",
+      "extensions": {},
+      "values": {
+        "ambient": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "diffuse": "texture_floor",
+        "emission": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "specular": [
+          0.012549,
+          0.012549,
+          0.012549,
+          1
+        ],
+        "shininess": 96.078431,
+        "transparency": 1
+      },
+      "technique": "technique0"
+    },
+    "material_floor_2": {
+      "name": "floor_2",
+      "extensions": {},
+      "values": {
+        "ambient": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "diffuse": "texture_floor2",
+        "emission": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "specular": [
+          0.012549,
+          0.012549,
+          0.012549,
+          1
+        ],
+        "shininess": 96.078431,
+        "transparency": 1
+      },
+      "technique": "technique0"
+    },
+    "material_pool": {
+      "name": "pool",
+      "extensions": {},
+      "values": {
+        "ambient": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "diffuse": "texture_pool",
+        "emission": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "specular": [
+          0.012549,
+          0.012549,
+          0.012549,
+          1
+        ],
+        "shininess": 96.078431,
+        "transparency": 1
+      },
+      "technique": "technique0"
+    },
+    "material_top": {
+      "name": "top",
+      "extensions": {},
+      "values": {
+        "ambient": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "diffuse": "texture_top",
+        "emission": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "specular": [
+          0.012549,
+          0.012549,
+          0.012549,
+          1
+        ],
+        "shininess": 96.078431,
+        "transparency": 1
+      },
+      "technique": "technique0"
+    },
+    "material_wall": {
+      "name": "wall",
+      "extensions": {},
+      "values": {
+        "ambient": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "diffuse": "texture_wall1",
+        "emission": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "specular": [
+          0.012549,
+          0.012549,
+          0.012549,
+          1
+        ],
+        "shininess": 96.078431,
+        "transparency": 1
+      },
+      "technique": "technique0"
+    },
+    "material_czmDefaultMat": {
+      "name": "czmDefaultMat",
+      "extensions": {},
+      "values": {
+        "ambient": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "diffuse": [
+          0.5,
+          0.5,
+          0.5,
+          1
+        ],
+        "emission": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "specular": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "shininess": 0,
+        "transparency": 1
+      },
+      "technique": "technique1"
+    }
+  },
+  "meshes": {
+    "mesh_level-test": {
+      "name": "level-test",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": "accessor_position",
+            "NORMAL": "accessor_normal"
+          },
+          "indices": "accessor_index_0",
+          "material": "material_czmDefaultMat",
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": "accessor_position",
+            "NORMAL": "accessor_normal"
+          },
+          "indices": "accessor_index_1",
+          "material": "material_floor_1",
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": "accessor_position",
+            "NORMAL": "accessor_normal"
+          },
+          "indices": "accessor_index_2",
+          "material": "material_wall",
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": "accessor_position",
+            "NORMAL": "accessor_normal"
+          },
+          "indices": "accessor_index_3",
+          "material": "material_top",
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": "accessor_position",
+            "NORMAL": "accessor_normal"
+          },
+          "indices": "accessor_index_4",
+          "material": "material_floor_2",
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": "accessor_position",
+            "NORMAL": "accessor_normal"
+          },
+          "indices": "accessor_index_5",
+          "material": "material_pool",
+          "mode": 4
+        }
+      ]
+    }
+  },
+  "nodes": {
+    "rootNode": {
+      "children": [],
+      "meshes": [
+        "mesh_level-test"
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "samplers": {
+    "sampler_0": {
+      "magFilter": 9729,
+      "minFilter": 9986,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  },
+  "scene": "scene_level-test",
+  "scenes": {
+    "scene_level-test": {
+      "nodes": [
+        "rootNode"
+      ]
+    }
+  },
+  "textures": {
+    "texture_floor": {
+      "format": 6407,
+      "internalFormat": 6407,
+      "sampler": "sampler_0",
+      "source": "floor",
+      "target": 3553,
+      "type": 5121
+    },
+    "texture_floor2": {
+      "format": 6407,
+      "internalFormat": 6407,
+      "sampler": "sampler_0",
+      "source": "floor2",
+      "target": 3553,
+      "type": 5121
+    },
+    "texture_pool": {
+      "format": 6407,
+      "internalFormat": 6407,
+      "sampler": "sampler_0",
+      "source": "pool",
+      "target": 3553,
+      "type": 5121
+    },
+    "texture_top": {
+      "format": 6407,
+      "internalFormat": 6407,
+      "sampler": "sampler_0",
+      "source": "top",
+      "target": 3553,
+      "type": 5121
+    },
+    "texture_wall1": {
+      "format": 6407,
+      "internalFormat": 6407,
+      "sampler": "sampler_0",
+      "source": "wall1",
+      "target": 3553,
+      "type": 5121
+    }
+  },
+  "extensionsUsed": [],
+  "animations": {},
+  "cameras": {},
+  "techniques": {
+    "technique0": {
+      "attributes": {
+        "a_position": "position",
+        "a_normal": "normal",
+        "a_texcoord_0": "texcoord_0"
+      },
+      "parameters": {
+        "modelViewMatrix": {
+          "semantic": "MODELVIEW",
+          "type": 35676
+        },
+        "projectionMatrix": {
+          "semantic": "PROJECTION",
+          "type": 35676
+        },
+        "normalMatrix": {
+          "semantic": "MODELVIEWINVERSETRANSPOSE",
+          "type": 35675
+        },
+        "ambient": {
+          "type": 35666
+        },
+        "diffuse": {
+          "type": 35678
+        },
+        "emission": {
+          "type": 35666
+        },
+        "specular": {
+          "type": 35666
+        },
+        "shininess": {
+          "type": 5126
+        },
+        "transparency": {
+          "type": 5126
+        },
+        "position": {
+          "semantic": "POSITION",
+          "type": 35665
+        },
+        "normal": {
+          "semantic": "NORMAL",
+          "type": 35665
+        },
+        "texcoord_0": {
+          "semantic": "TEXCOORD_0",
+          "type": 35664
+        }
+      },
+      "program": "program0",
+      "states": {
+        "enable": [
+          2884,
+          2929
+        ]
+      },
+      "uniforms": {
+        "u_modelViewMatrix": "modelViewMatrix",
+        "u_projectionMatrix": "projectionMatrix",
+        "u_normalMatrix": "normalMatrix",
+        "u_ambient": "ambient",
+        "u_diffuse": "diffuse",
+        "u_emission": "emission",
+        "u_specular": "specular",
+        "u_shininess": "shininess",
+        "u_transparency": "transparency"
+      }
+    },
+    "technique1": {
+      "attributes": {
+        "a_position": "position",
+        "a_normal": "normal"
+      },
+      "parameters": {
+        "modelViewMatrix": {
+          "semantic": "MODELVIEW",
+          "type": 35676
+        },
+        "projectionMatrix": {
+          "semantic": "PROJECTION",
+          "type": 35676
+        },
+        "normalMatrix": {
+          "semantic": "MODELVIEWINVERSETRANSPOSE",
+          "type": 35675
+        },
+        "ambient": {
+          "type": 35666
+        },
+        "diffuse": {
+          "type": 35666
+        },
+        "emission": {
+          "type": 35666
+        },
+        "specular": {
+          "type": 35666
+        },
+        "shininess": {
+          "type": 5126
+        },
+        "transparency": {
+          "type": 5126
+        },
+        "position": {
+          "semantic": "POSITION",
+          "type": 35665
+        },
+        "normal": {
+          "semantic": "NORMAL",
+          "type": 35665
+        }
+      },
+      "program": "program1",
+      "states": {
+        "enable": [
+          2884,
+          2929
+        ]
+      },
+      "uniforms": {
+        "u_modelViewMatrix": "modelViewMatrix",
+        "u_projectionMatrix": "projectionMatrix",
+        "u_normalMatrix": "normalMatrix",
+        "u_ambient": "ambient",
+        "u_diffuse": "diffuse",
+        "u_emission": "emission",
+        "u_specular": "specular",
+        "u_shininess": "shininess",
+        "u_transparency": "transparency"
+      }
+    }
+  },
+  "programs": {
+    "program0": {
+      "attributes": [
+        "a_position",
+        "a_normal",
+        "a_texcoord_0"
+      ],
+      "fragmentShader": "fragmentShader0",
+      "vertexShader": "vertexShader0"
+    },
+    "program1": {
+      "attributes": [
+        "a_position",
+        "a_normal"
+      ],
+      "fragmentShader": "fragmentShader1",
+      "vertexShader": "vertexShader1"
+    }
+  },
+  "shaders": {
+    "vertexShader0": {
+      "type": 35633,
+      "uri": "vertexShader0.glsl"
+    },
+    "fragmentShader0": {
+      "type": 35632,
+      "uri": "fragmentShader0.glsl"
+    },
+    "vertexShader1": {
+      "type": 35633,
+      "uri": "vertexShader1.glsl"
+    },
+    "fragmentShader1": {
+      "type": 35632,
+      "uri": "fragmentShader1.glsl"
+    }
+  },
+  "skins": {},
+  "extensions": {}
+}

@@ -7,6 +7,7 @@ Game.prototype.start = function() {
   var self = this;
   this.scene = new THREE.Scene();
   this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  this.scene.add(new THREE.AmbientLight( 0x404040 ));
   
    // Создаем канвас для WebGL, добавляем к документу и создаем рендерер
   this.renderer = new THREE.WebGLRenderer();
@@ -28,16 +29,8 @@ Game.prototype.start = function() {
 }
 
 Game.prototype.init = function() {
-  // Создаем зелены кубик
-  var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-  var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-  this.cube = new THREE.Mesh( geometry, material );
-
-  // Добавляем кубик на сцену
-  this.scene.add(this.cube);
-
-  // Cмещаем камеру чтобы увидеть кубик
-  this.camera.position.z = 6; 
+  this.level = new Level(this.scene);
+  this.level.load();
 }
 
 Game.prototype.requestResize = function() {
@@ -47,11 +40,14 @@ Game.prototype.requestResize = function() {
 }
 
 Game.prototype.gameLoop = function(scene, camera) {
-  this.cube.rotation.x += 0.05
-  this.cube.rotation.z += 0.05
+  this.camera.position.x += 5 
+  this.camera.position.y += 5 
+  this.camera.position.z += 5 
 }
 
 var game = new Game()
 
 game.start()
+
+console.log(game)
 

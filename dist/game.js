@@ -1,45 +1,78 @@
+/* global THREE */
+/* global Controls */
+/* global Level */
+
 var Game = function() {
   this.name = 'etna'
 }
-/* global THREE */
+
 Game.prototype.start = function() {
   // Создаем сцену
   var self = this;
-  this.scene = new THREE.Scene();
-  this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-   // Создаем канвас для WebGL, добавляем к документу и создаем рендерер
-  this.renderer = new THREE.WebGLRenderer();
-  this.requestResize()
   
-  document.body.appendChild(this.renderer.domElement);
-  
+  // Обработчик ресайза
   window.onresize = this.requestResize.bind(this);
-
+  
+  // Инициализируем сцену
   this.init()
   
+  // Запускаем игровой цикл
   render()
-
+  
+  // Главный цикл
   function render() {
     self.gameLoop();
 	  self.renderer.render(self.scene, self.camera);
-	  
+
 	  requestAnimationFrame(render);
   }
 }
-/* global Level */
+
 Game.prototype.init = function() {
+  this.createScene()
+  this.loadLevel();
+  this.gameControls = new Controls(this.controls);
+  this.controls.getObject().position.z = -5;
+  this.controls.getObject().position.y = 0.6;
+  this.controls.getObject().position.x = 0;
+  this.controls.getObject().rotation.y = Math.PI;
+}
+
+Game.prototype.createScene = function() {
+  // Создаем сцену и камеру
+  this.scene = new THREE.Scene();
+  this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );  
+  
+  // Добавляем туман
+  this.scene.fog = new THREE.Fog( 0xc7e4ff, 0, 25 );
+  
+  // Добавляем рэйкастер для игрока
+  this.raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3( 0, -1, 0 ), 0, 10);
+	this.controls = new THREE.PointerLockControls(this.camera);
+	this.scene.add(this.controls.getObject());
+
+  // Создаем канвас для WebGL, добавляем к документу и создаем рендерер
+  this.renderer = new THREE.WebGLRenderer();
+  this.renderer.setPixelRatio(window.devicePixelRatio);
+  this.requestResize()
+  
+  // Добавляем канвас к документу
+  document.body.appendChild(this.renderer.domElement);
+  
+  // Добавляем стандартное освещение
+  var ambient = new THREE.AmbientLight( 0x444444, 1 );
+  this.scene.add(ambient);
+  
+	var light = new THREE.HemisphereLight( 0xeeeeff, 0x777788, 0.75 );
+	light.position.set( 0.5, 1, 0.75 );
+	this.scene.add(light);
+} 
+
+Game.prototype.loadLevel = function() {
   this.level = new Level(this.scene);
-  this.level.load();
-  this.camera.position.z = -5;
-  this.camera.position.y = 0.6;
-  this.camera.position.x = 0;
-  this.camera.rotation.y = Math.PI;
   
-  window.scene = this.scene;
-  
-  var ambient = new THREE.AmbientLight( 0x444444, 3 );
-  this.scene.add( ambient );
+  // Загрузка игрового уровня
+  this.level.load();  
 }
 
 Game.prototype.requestResize = function() {
@@ -48,12 +81,9 @@ Game.prototype.requestResize = function() {
   this.renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-Game.prototype.gameLoop = function(scene, camera) {
-  // this.camera.position.x += 1 
-  // this.camera.position.y += 1
-  // this.camera.position.z += 1 
+Game.prototype.gameLoop = function() {
+  if (this.gameControls.controls.enabled) {
+  	this.raycaster.ray.origin.copy(this.controls.getObject().position);
+  	this.raycaster.ray.origin.y -= 10;   
+  }
 }
-
-var game = new Game()
-
-game.start()

@@ -1,9 +1,11 @@
 /* global THREE */
 /* global Controls */
 /* global Level */
+/* global performance */
 
 var Game = function() {
   this.name = 'etna'
+  this.prevTime = performance.now();
 }
 
 Game.prototype.start = function() {
@@ -41,7 +43,7 @@ Game.prototype.init = function() {
 Game.prototype.createScene = function() {
   // Создаем сцену и камеру
   this.scene = new THREE.Scene();
-  this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );  
+  this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 100 );  
   
   // Добавляем туман
   this.scene.fog = new THREE.Fog( 0xc7e4ff, 0, 25 );
@@ -84,6 +86,24 @@ Game.prototype.requestResize = function() {
 Game.prototype.gameLoop = function() {
   if (this.gameControls.controls.enabled) {
   	this.raycaster.ray.origin.copy(this.controls.getObject().position);
-  	this.raycaster.ray.origin.y -= 10;   
+  	this.raycaster.ray.origin.y -= 10;
+  	
+		var time = performance.now();
+		var delta = (time - this.prevTime) / 1000;
+		
+		this.gameControls.velocity.x -= this.gameControls.velocity.x * 10 * delta;
+		this.gameControls.velocity.z -= this.gameControls.velocity.z * 10 * delta;
+		// this.gameControls.velocity.y -= 9.8 * 1 * delta; // 100.0 = mass
+		
+		if (this.gameControls.moveTo.forward) this.gameControls.velocity.z -= 40 * delta;
+		if (this.gameControls.moveTo.backward) this.gameControls.velocity.z += 40 * delta;
+		if (this.gameControls.moveTo.left) this.gameControls.velocity.x -= 40 * delta;
+		if (this.gameControls.moveTo.right) this.gameControls.velocity.x += 40 * delta;
+		
+		this.controls.getObject().translateX(this.gameControls.velocity.x * delta);
+		this.controls.getObject().translateY(this.gameControls.velocity.y * delta);
+		this.controls.getObject().translateZ(this.gameControls.velocity.z * delta);
+		
+		this.prevTime = time;  	
   }
 }

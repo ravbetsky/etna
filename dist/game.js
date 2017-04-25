@@ -95,10 +95,10 @@ Game.prototype.gameLoop = function() {
 		this.gameControls.velocity.z -= this.gameControls.velocity.z * 10 * delta;
 		// this.gameControls.velocity.y -= 9.8 * 1 * delta; // 100.0 = mass
 		
-		if (this.gameControls.moveTo.forward) this.gameControls.velocity.z -= 40 * delta;
-		if (this.gameControls.moveTo.backward) this.gameControls.velocity.z += 40 * delta;
-		if (this.gameControls.moveTo.left) this.gameControls.velocity.x -= 40 * delta;
-		if (this.gameControls.moveTo.right) this.gameControls.velocity.x += 40 * delta;
+		if (this.gameControls.moveTo.forward) this.gameControls.velocity.z -= 20 * delta;
+		if (this.gameControls.moveTo.backward) this.gameControls.velocity.z += 20 * delta;
+		if (this.gameControls.moveTo.left) this.gameControls.velocity.x -= 20 * delta;
+		if (this.gameControls.moveTo.right) this.gameControls.velocity.x += 20 * delta;
 		
 		this.controls.getObject().translateX(this.gameControls.velocity.x * delta);
 		this.controls.getObject().translateY(this.gameControls.velocity.y * delta);
